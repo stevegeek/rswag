@@ -160,7 +160,7 @@ module Rswag
           end
         end
 
-        context 'with OpenAPI 3 formData' do
+        context 'with formData' do
           let(:doc_2) do
             {
               paths: {
@@ -194,7 +194,7 @@ module Rswag
           end
         end
 
-        context 'with OpenAPI 3 formData file upload' do
+        context 'with formData file upload' do
           let(:doc_2) do
             {
               paths: {
@@ -223,7 +223,7 @@ module Rswag
           end
         end
 
-        context 'with OpenAPI 3 formData file upload as part of multipart' do
+        context 'with formData file upload as part of multipart' do
           let(:doc_2) do
             {
               paths: {
@@ -270,7 +270,7 @@ module Rswag
           end
         end
 
-        context 'with OpenAPI 3 formData multiple file uploads' do
+        context 'with formData multiple file uploads' do
           let(:doc_2) do
             {
               paths: {
@@ -305,7 +305,7 @@ module Rswag
           end
         end
 
-        context 'with OpenAPI 3 formData with multiple parameters' do
+        context 'with formData with multiple parameters' do
           let(:first_param) do
             {
               in: :headers
@@ -434,7 +434,7 @@ module Rswag
         end
 
         # With OpenAPI 3, the in: :body parameter is treated same as formData
-        context 'with `in: body` parameters and OpenAPI 3' do
+        context 'with `in: body` parameters' do
           let(:doc_2) do
             {
               paths: {
