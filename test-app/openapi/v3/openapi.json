@@ -40,7 +40,14 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "type": "file"
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "required": true,
+                    "format": "binary"
+                  }
+                }
               }
             }
           },
@@ -80,23 +87,12 @@
     }
   ],
   "components": {
-    "securitySchemes": {
-      "basic_auth": {
-        "type": "http",
-        "scheme": "basic"
-      },
-      "api_key": {
-        "type": "apiKey",
-        "name": "api_key",
-        "in": "query"
-      }
-    },
     "schemas": {
       "errors_object": {
         "type": "object",
         "properties": {
           "errors": {
-            "$ref": "#/components/errors_map"
+            "$ref": "#/components/schemas/errors_map"
           }
         }
       },
@@ -154,6 +150,21 @@
           "id",
           "headline"
         ]
+      }
+    },
+    "securitySchemes": {
+      "basic_auth": {
+        "type": "http",
+        "scheme": "basic"
+      },
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "query"
+      },
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   }
