@@ -46,14 +46,12 @@ RSpec.describe 'Auth Tests API', type: :request, openapi_spec: 'v1/openapi.json'
       security [bearer: []]
 
       response '204', 'Valid credentials' do
-        let(:request_headers) { { "Authorization" => "Bearer foobar" } }
-        let(:Authorization) { 'Bearer foobar' }
+        let(:request_headers) { { 'Authorization' => 'Bearer foobar' } }
         run_test!
       end
 
       response '401', 'Invalid credentials' do
-        let(:request_headers) { { "Authorization" => "Bearer barFoo" } }
-        let(:Authorization) { 'Bearer barFoo' }
+        let(:request_headers) { { 'Authorization' => 'Bearer barFoo' } }
         run_test!
       end
     end
